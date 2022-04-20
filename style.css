@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css?family=Cantarell|Raleway&display=swap');
+
+body {
+    font-family: Raleway, Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1rem;
+    padding: 0px;
+    margin: 0px;
+    background-color: #9BE8F4;
+}
+
+article {
+    margin: 5%;
+    background-color: #ffffff;
+    border-radius: 3px;
+    padding: 2%;
+}
+article .title {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+article .pubDate {
+    color: #797D7F;
+}
+article .description {
+    font-size: 14px;
+}
+article a {
+    text-decoration: none;
+    color: #000000;
+    transition: 0.3s;
+}
+article a:hover {
+    color: red;
+    border-bottom: 1px solid red;
+    transform: 0.3s;
+}
+article a:visited {
+    color:#566573 ;
+}
+article .title_container {
+ display:flex;
+}
+article .title_container div:first-child {
+    width: 90%;
+}
