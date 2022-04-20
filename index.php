@@ -25,7 +25,9 @@
                     <span class='pubDate'><p><?= $item->pubDate?></p></span>
                 </div>
                 <div>
-                    <button mat-raised-button>Modifier</button>
+                    <a href="update.php?title=<?= $item->title ?>&pubdate=<?= $item->pubDate?>&link=<?= $item->link ?>">
+                     <button mat-raised-button>Modifier</button>
+                    </a>
                 </div>
             </div>   
             <div id="contenu"> 
