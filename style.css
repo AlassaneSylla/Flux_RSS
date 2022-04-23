@@ -5,17 +5,19 @@ body {
     font-size: 1rem;
     padding: 0px;
     margin: 0px;
-    background-color: #9BE8F4;
 }
-
+.container h1 {
+    padding-top: 10px; 
+}
 article {
     margin: 5%;
-    background-color: #ffffff;
-    border-radius: 3px;
-    padding: 2%;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 5%;
 }
 article .title {
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    padding-top: 5px ;
+    padding-left: 10px;
 }
 article .pubDate {
     color: #797D7F;
@@ -26,15 +28,13 @@ article .description {
 article a {
     text-decoration: none;
     color: #000000;
-    transition: 0.3s;
 }
 article a:hover {
-    color: red;
-    border-bottom: 1px solid red;
+    color: #f5222d;
     transform: 0.3s;
 }
 article a:visited {
-    color:#566573 ;
+    color:#1890ff ;
 }
 article .title_container {
  display:flex;
@@ -42,3 +42,4 @@ article .title_container {
 article .title_container div:first-child {
     width: 90%;
 }
+

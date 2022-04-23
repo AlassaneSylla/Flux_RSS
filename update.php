@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head ng-app="ui.bootstrap.demo">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flux RSS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="normalize.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.2.5/angular-material.min.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.2.5/angular-material.min.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <h1>Update RSS</h1>
-    <article>
-        <?php
-             if( isset($_GET['link']) && isset($_GET['title']) && isset($_GET['pubdate'])){
-        ?>
-             <form action="" method="">
-                Link: <input type="text" name="link" value=" <?php echo $_GET['link']  ?>" size="150"> <br><br>
-                Title: <input type="text" name="link" value=" <?php echo $_GET['title']  ?>" size="150"> <br><br>
-                PubDate: <input type="text" name="link" value=" <?php echo $_GET['pubdate']  ?>" size="50"> <br><br>
-                <button type="submit"><a href="index.php">Modifier</a></button>
-             </form>   
-                
-                
-        <?php  } ?>
-    </article>   
+    <div class="container">
+        <article>
+            <?php 
+                if( isset($_GET['link']) && isset($_GET['title']) && isset($_GET['pubdate']) && isset($_GET['text'])){
+            ?>
+                <div ng-controller="DateParserDemoCtrl">
+                    <form method="" action="">
+                        <h4>Veuillez saisir vos modifications puis valider</h4>
+                        <p class="form-group">
+                            <label>Titre :</label>
+                            <input type="text" ng-model="format" class="form-control" value="<?php echo $_GET['title'] ?>">
+                        </p>
+                        <p class="form-group">
+                            <label>Description :</label>
+                            <textarea type="text" class="form-control" ng-model="format" cols="100" rows="8"><?php echo $_GET['text']; ?></textarea>
+                        </p>
+                        <button type="button" class="btn btn-sm btn-danger">valider</button>
+                        <button type="button" class="btn btn-sm btn-default"><a href="index.php">annuler</a></button>
+                    </form>
+                </div>     
+            <?php  
+        } ?>
+        </article>
+    </div>      
 </body>
 </html>
