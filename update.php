@@ -22,17 +22,19 @@
                 if( isset($_GET['link']) && isset($_GET['title']) && isset($_GET['pubdate']) && isset($_GET['text'])){
             ?>
                 <div ng-controller="DateParserDemoCtrl">
-                    <form method="" action="">
+                    <form method="post" action="traitements.php">
                         <h4>Veuillez saisir vos modifications puis valider</h4>
                         <p class="form-group">
                             <label>Titre :</label>
-                            <input type="text" ng-model="format" class="form-control" value="<?php echo $_GET['title'] ?>">
+                            <input type="text" ng-model="format" class="form-control" name='fluxTitle' value="<?php echo $_GET['title'] ?>">
                         </p>
                         <p class="form-group">
                             <label>Description :</label>
-                            <textarea type="text" class="form-control" ng-model="format" cols="100" rows="8"><?php echo $_GET['text']; ?></textarea>
+                            <textarea type="text" class="form-control" ng-model="format" cols="100" rows="8" name='fluxText'><?php echo $_GET['text']; ?></textarea>
                         </p>
-                        <button type="button" class="btn btn-sm btn-danger">valider</button>
+                        <!-- <div><?php echo $_GET['link'] ?></div>
+                        <div><?php echo $_GET['pubdate'] ?></div> -->
+                        <button type="submit" class="btn btn-sm btn-danger" name='enreg' value="AJOUTER">valider</button>
                         <button type="button" class="btn btn-sm btn-default"><a href="index.php">annuler</a></button>
                     </form>
                 </div>     
@@ -42,3 +44,6 @@
     </div>      
 </body>
 </html>
+
+
+

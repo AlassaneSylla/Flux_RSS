@@ -19,8 +19,9 @@
     <script>
       angular.module('gfg', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
       angular.module('gfg').controller('pagination', function ($scope) {
-        $scope.totalItems = 64;
+        $scope.totalItems = $item.length;
         $scope.currentPage = 4;
+        
         });
     </script>
 </head>
@@ -38,17 +39,20 @@
                 <div class='title_container'>
                     <div>
                         <a href='<?= $item->link ?>'><span class='title'><h4><?= $item->title ?></h4></span></a> 
-                        <span class='pubDate'><p><?= $item->pubDate?></p></span>
+                        <span class='pubDate' name='date'><p><?= $item->pubDate?></p></span>
                         <span>
-                            <p><img src="<?= $item->media?>"></p>
+                            <p><image>
+                                <url><?= $item->link?></url>
+                                <link>http://www.lemonde.fr/rss/en_continu.xml</link>
+                            </image></p>
                         </span>
                     </div>
                     <div>
                         <a href="update.php?title=<?= $item->title ?>
-                                &pubdate=<?= $item->pubDate ?>
-                                &link=<?= $item->link ?>
-                                &text=<?= $item->description ?>
-                                ">
+                                 &pubdate=<?= $item->pubDate ?>
+                                 &link=<?= $item->link ?>
+                                 &text=<?= $item->description ?>
+                                 &id=<?= $item->id ?>">
                         <button type="button" class="btn btn-sm btn-info">afficher</button>        
                         </a>
                     </div>
@@ -61,6 +65,16 @@
                 }
             ?>
         </article>
-    </div>  
+
+        <hr>
+        
+        <!-------------pagination----------------->
+        <div>
+
+        </div>
+
+    </div> 
 </body>
 </html>
+
+<?php require('conn.php'); ?>
