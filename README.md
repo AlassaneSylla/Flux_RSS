@@ -1,6 +1,6 @@
 # Flux_RSS
 
-langages : PHP - Angular ( angular ui-bootstrap/ Angular animated/ angular-sanitize/angular materialize)
+langages : HTML - CSS - PHP - Angular ( angular ui-bootstrap/ Angular animated/ angular-sanitize/angular materialize)
 
 technologies : GitHub/ Heroku
 
