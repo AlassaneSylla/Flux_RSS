@@ -13,6 +13,6 @@
  die('Erreur : ' .$conn->connect_error);
  }
  else{
-     echo 'connected';
+     /*echo 'connected';*/
 }
 ?>
